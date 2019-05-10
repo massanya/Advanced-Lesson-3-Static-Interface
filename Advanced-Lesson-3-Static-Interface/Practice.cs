@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,37 @@ namespace Advanced_Lesson_3_Static_Interface
         public static void AL3_P3_3()
         {
         }
-
-    }    
+        public static void GuessType<T>(T item)
+        {
+	        
+	        switch (item)
+	        {
+		        case string s:
+		        {
+			        Console.WriteLine($"Вы передали строку длиной {s.Length} символов. ");
+			        break;
+		        }
+		        case int i:
+		        {
+			        Console.WriteLine("Вы передали положительное целое число");
+			        break;
+		        }
+		        case double d:
+		        {
+			        Console.WriteLine($"Вы передали вещественное число с {d.ToString().Split('.')[1].Length} значимыми цифрами");
+			        break;
+		        }
+		        case DateTime dt:
+		        {
+			        Console.WriteLine($"Вы передали время: {dt}");
+			        break;
+		        }
+		        default:
+		        {
+			        Console.WriteLine("Понятия не имею, что вы передали");
+			        break;
+		        }
+	        }
+        }
+	}    
 }
